@@ -1,7 +1,7 @@
 package Menu
 
-abstract class MenuItem(val name: String, val itemType: MenuItem.ItemType, val price: Double, val serviceCharge: Double, val premium: Boolean = false) {
-
+abstract class MenuItem(val name: String, val itemType: MenuItem.ItemType, val price: Double, val premium: Boolean) {
+  val serviceCharge: Double
 }
 
 object MenuItem {
