@@ -21,14 +21,14 @@ Remember some of the key lessons we've learnt about developing something:
 
 #### Menu:
 - A standard list of menu items.
-- Premium specials need to be able to be added/removed from the menu.
+- Menu.Premium specials need to be able to be added/removed from the menu.
 - Stock count of the menu items. Some cannot order an item if the count is zero.
 
 #### Bill:
 - Take a customer order and produce an itemised bill which includes an optional service charge.
 
 #### Service Charge:
-- When all purchased items are no service charge is applied.
+- When all purchased items are drinks no service charge is applied.
 - When purchased items include any cold food, apply a service charge of 10% to the total bill (rounded to 2 decimal places).
 - When purchased items include any hot food apply a service charge of 20% to the total bill.
 - If a premium special is purchased, a service charge of 25% is added to the total bill.
@@ -52,7 +52,7 @@ Remember some of the key lessons we've learnt about developing something:
     - Every time their bill comes to more than £20, they receive a star. Each star will generate a discount on the total bill (before service charge is applied) of 2%.
     - They can only gain a star once per day.
     - The maximum number of stars is 8, once 8 is reached they will not receive any more stars but the total % discount of 16% will be taken off each bill over £20 (not including service charge).
-    - Premium menu items are excluded from this discount.
+    - Menu.Premium menu items are excluded from this discount.
     - To qualify for this discount card, their total spend over a minimum of 5 purchases needs to be £150.
     - E.g. if a customer purchased 4 times, each a minimum of £20, on 4 different days, they will be entitled to a discount of 8% on every purchase (regardless of total price). They can redeem this discount with every purchase, multiple times per day. On their 5th purchase of minimum £20 (after discount scheme), they will receive their 8% discount and a star (taking them to 5).
 
@@ -82,7 +82,7 @@ Add additional details to the produced bill:
 ### Extension 5 - End of Day Report
 The client requires a reliable close of day routine. The report should include:
 - **Total sales**, categorised into:
-    - Hot Food, Cold Food, Hot Drinks, Cold Drinks, Alcoholic Drinks, Sundries, Premium Meals.
+    - Hot Food, Cold Food, Hot Drinks, Cold Drinks, Alcoholic Drinks, Sundries, Menu.Premium Meals.
 - **Total revenue**, separated by payment type:
     - Card, Cash, Amex.
 - **Discounts used**, including:
