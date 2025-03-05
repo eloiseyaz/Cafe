@@ -92,4 +92,29 @@ class OrderSpec extends AnyWordSpec with Matchers {
 
   }
 
+  "Order.cost" should {
+
+    "return the total cost of the items" when {
+
+      "there is 1 of each item" in {
+        val singlesOrder = Order.apply(List((crisps, 1), (nuggets, 1), (coke, 1)))
+        singlesOrder.cost shouldBe 8
+      }
+
+      "there are multiples of an item" in {
+        val multiplesOrder = Order.apply(List((crisps, 2), (nuggets, 4), (coke, 7)))
+        multiplesOrder.cost shouldBe 35
+      }
+
+      "there is none of an item" in {
+        val emptyOrder = Order.apply(List((crisps, 0), (nuggets, 0), (coke, 0)))
+        emptyOrder.cost shouldBe 0
+        val someEmptyOrder = Order.apply(List((crisps, 1), (nuggets, 0), (coke, 3)))
+        someEmptyOrder.cost shouldBe 7.5
+      }
+
+    }
+
+  }
+
 }
