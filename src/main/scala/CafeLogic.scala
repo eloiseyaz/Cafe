@@ -10,4 +10,12 @@ object CafeLogic extends App{
   val newOrder = Order.apply(List((crisps, 2), (coke, 1)))
   val regMenu: List[MenuItem] = List(nuggets, crisps, coke)
 
+  //  def placeOrder(order: Order): Either[String, Order] = {
+  //  }
+
+  def getBill(order: Order, serviceCharge: Option[Double] = None): List[(String, Int, Double)] = {
+    val sCharge = serviceCharge.getOrElse(order.serviceCharge)
+    order.order.map(item => (item._1.name, item._2, (item._1.price * item._2 * sCharge * 100).round.toDouble / 100))
+  }
+
 }
