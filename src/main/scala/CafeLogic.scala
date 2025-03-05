@@ -18,4 +18,8 @@ object CafeLogic extends App{
     order.order.map(item => (item._1.name, item._2, (item._1.price * item._2 * sCharge * 100).round.toDouble / 100))
   }
 
+  def getTotalCost(order: Order, serviceCharge: Option[Double] = None): Double = {
+    (order.cost * serviceCharge.getOrElse(order.serviceCharge) * 100).round.toDouble / 100
+  }
+
 }
